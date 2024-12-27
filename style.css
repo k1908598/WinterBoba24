@@ -1,0 +1,105 @@
+html, body{
+    background: linear-gradient(to bottom, #4a90e2, #ffffff); /* Blue to white gradient */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+#topbar{
+    position: fixed;
+    width:100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight:bolder;
+    font-size:2em;
+    color:white;
+    background-color:rgba(169,214,229,0.25) ;
+
+}
+.lodge{
+    background-color: #87BEBE;
+    border-radius:50%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:700px;
+    height:700px;
+    border: 10px solid white;
+    box-shadow: 0 0 15px 10px white;
+    transition: filter 0.3s ease
+
+}
+
+.lodge:hover{
+    filter: blur(5px);
+}
+.lodge img{
+    position:absolute;
+    width:85%;
+    height: auto;
+    object-fit:cover;
+    object-position: center;
+    transform: translate(7%,55%);
+}
+.snowflake-container{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+   /* background: rgba(255,0,0,0.3);*/
+}
+.snowflake{
+    position:absolute;
+    top: -10%;
+    width: 20px;
+    height: 20px;
+    background: url('./snowflake.png') no-repeat center center;
+    background-size: contain;
+    border: 1px solid red;
+    animation: fall 8s linear infinite, spin 3s linear infinite;
+    opacity: 0.8;
+}
+/* spinning animation*/
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* falling animation*/
+@keyframes fall{
+    0%{
+        transform: translateY(-10%) translateX(0);
+    }
+    100%{
+        transform: translateY(110%) translateX(30px);
+    }
+}
+.snowflake:nth-child(1){
+    left:10%;
+    animation-delay: 0s, 0s;
+}
+.snowflake:nth-child(2){
+    left:50%;
+    animation-delay: 1s, 1s;
+}
+.snowflake:nth-child(3){
+    left:40%;
+    animation-delay: 2s, 0.5s;
+}
+.snowflake:nth-child(4){
+    left:70%;
+    animation-delay: 3s, 1s;
+}
+.snowflake:nth-child(5){
+    left:90%;
+    animation-delay: 4s, 2s;
+}
